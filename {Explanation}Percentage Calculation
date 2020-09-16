@@ -1,0 +1,30 @@
+package com.company;
+import java.util.*;
+public class Main
+{
+    public static void main(String []args)
+    {
+        System.out.println("Enter maximum marks of test");
+        Scanner s1=new Scanner(System.in);
+        int userinput=s1.nextInt(); //taking maximum marks of only one subject from user
+        int i=1,marks=0,sum;
+        for(i=1;i<12;i++)
+        {
+            System.out.println("Marks of Subject "+i+" is"+"\nfor exit type 362001");
+            Scanner s2=new Scanner(System.in); //taking marks from the user of each subject
+            sum=s2.nextInt();
+            if(sum==362001)  //to exit from this loop while writing the marks of all subjects
+            {
+                i--;    //as i incremnts until this condition comes but we want to get total marks whis is marks of one subject into no. of subject
+                break;
+            }
+
+            marks=marks+sum; //to calculate the total marks of the subjects which have been taken by the student
+        }
+        int total=i*userinput; //calculating total marks
+        float c=(float)marks/total; //as int divide by divide mostly we get real number but integer only consider real integer number to avoid data
+                                    //loss we are converting in float(50/100=0.5)
+        System.out.println("Your percentage is "+c*100+"%"); //converting into percntage manner
+    }
+
+}
