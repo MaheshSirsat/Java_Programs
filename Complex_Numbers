@@ -1,0 +1,89 @@
+package com.company;
+import java.util.*;
+class Complex
+{
+    int x,y;
+    Complex()
+    {
+        x=0;
+        y=0;
+    }
+    public void SetComplex()
+    {
+        System.out.println("Enter complex Numbers");
+        Scanner s1=new Scanner(System.in);
+        x=s1.nextInt();
+        y=s1.nextInt();
+    }
+    public void ShowComplex()
+    {
+        System.out.println("You have entered\n("+x+"+"+y+"i)");
+    }
+    public void PerfromAdd(Complex c1)
+    {
+        int m,s;
+        m=x+c1.x;
+        s=y+c1.y;
+        System.out.println("Addition of two complex numbers is \n("+m+"+"+s+"i)");
+    }
+    public void PerformSub(Complex c1)
+    {
+        int m,s;
+        m=x-c1.x;
+        s=y-c1.y;
+        System.out.println("Substrction of two COmplex Number is \n("+m+"+"+"("+s+")"+"i)");
+    }
+    public void PerformMul(Complex c1)
+    {
+        int m,s;
+        m=x*c1.x;
+        s=y*c1.y;
+        System.out.println("Multilication of Two Complex Numbers is\n("+m+"+"+s+"i)");
+    }
+    public void PerformDiv(Complex c1)
+    {
+        float m,s;
+        m=x/c1.x;
+        s=y/c1.y;
+        System.out.println(("Divion of two Number is \n("+m+"+"+s+"i)"));
+    }
+}
+public class Main
+{
+    public static void main(String []args)
+    {
+        int limit=0,i=0;
+        Complex A=new Complex();
+        A.SetComplex();
+        A.ShowComplex();
+        Complex B=new Complex();
+        B.SetComplex();
+        B.ShowComplex();
+        for(i=0;limit!=7;i++)
+        {
+            System.out.println("Enter any key from the following \n1.addition\n2.substractiom\n3.multilication\n4.division\n Press 07 for exit");
+            Scanner s1=new Scanner(System.in);
+            limit=s1.nextInt();
+            if(limit==1)
+            {
+                A.PerfromAdd(B);
+            }
+            if(limit==2)
+            {
+                A.PerformSub(B);
+            }
+            if(limit==3)
+            {
+                A.PerformMul(B);
+            }
+            if(limit==4)
+            {
+                A.PerformDiv(B);
+            }
+            if(i==10)
+            {
+                break;
+            }
+        }
+  }
+}
