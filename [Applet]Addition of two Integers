@@ -1,0 +1,49 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.Applet;
+//<applet code="mayu" width="300" height="200"> </applet>
+public class mayu extends Applet
+{
+    Label l1;
+    Label l2;
+    Label l3;
+    TextField t1;
+    TextField t2;
+    Button b1;
+    public void init()
+    {
+        l1=new Label("Enter First Number");
+        l2=new Label("Enter Second Number");
+        t1=new TextField();
+        t2=new TextField();
+        b1=new Button("Add");
+        l3=new Label();
+        setLayout(null);
+        l1.setBounds(30,50,150,20);
+        l2.setBounds(30,90,150,20);
+        t1.setBounds(170,50,100,20);
+        t2.setBounds(170,90,100,20);
+        b1.setBounds(90,130,110,30);
+        l3.setBounds(70,170,100,25);
+        add(t1);
+        add(t2);
+        add(l1);
+        add(l2);
+        add(l3);
+        add(b1);
+        b1.addActionListener(new babu());    
+    }
+    public class babu implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            int a,b,c;
+            a=Integer.parseInt(t1.getText());
+            b=Integer.parseInt(t2.getText());
+            c=a+b;
+            l3.setText("Add"+c);
+        }
+    }
+
+
+}
